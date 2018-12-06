@@ -77,5 +77,21 @@ void Tree::search()
 
 Tree::~Tree()
 {
-        
+     if(root == NULL)
+            return;
+
+        queue<Node*> q;
+        q.push(root);
+        while(!q.empty()) {
+            int size = q.size();
+            while (size > 0) {
+                Node * p = q.front();
+                q.pop();
+                for(int i = 0;i<p->children.size(); i++) {
+                    q.push(p->children.at(i));
+                }
+                delete p;
+                size--;
+            }
+        }   
 }
