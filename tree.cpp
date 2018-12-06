@@ -82,7 +82,7 @@ Tree::~Tree()
 
         queue<Node*> remainingNodes;
         remainingNodes.push(root);
-        while(!remaningNodes.empty()) {
+        while(!remainingNodes.empty()) {
             int size = remainingNodes.size();
             while (size > 0) {
                 Node * currentNode = remainingNodes.front();
@@ -90,7 +90,7 @@ Tree::~Tree()
                 for(int i = 0;i<currentNode->children.size(); i++) {
                     remainingNodes.push(currentNode->children.at(i));
                 }
-                delete p;
+                delete currentNode;
                 size--;
             }
         }   
