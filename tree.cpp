@@ -1,6 +1,6 @@
 #include "tree.h"
 #include <iostream>
-#include <queue>
+#include <remainingNodesueue>
 using namespace std;
 
 /* Tree Constructor:
@@ -48,7 +48,7 @@ void Tree::createTree()
 
 /* search Function:
    Iterates through the tree with an in-order traversal, stops when the 
-   correct node is found. Utilizes a queue to track which nodes still need
+   correct node is found. Utilizes a remainingNodesueue to track which nodes still need
    to be printed.
  */
 
@@ -57,18 +57,18 @@ void Tree::search()
         if(root == NULL)
             return;
 
-        queue<Node*> q;
-        q.push(root);
-        while(!q.empty()) {
-            int size = q.size();
+        queue<Node*> remainingNodes;
+        remainingNodes.push(root);
+        while(!remainingNodes.empty()) {
+            int size = remainingNodes.size();
             while (size > 0) {
-                Node * p = q.front();
-                q.pop();
-                cout << p->Name << " ";
-                if(p->Name == "Find Me")
+                Node * currentNode = remainingNodes.front();
+                remainingNodes.pop();
+                cout << currentNode->Name << " ";
+                if(currentNode->Name == "Find Me")
                     return;
-                for(int i = 0;i<p->children.size(); i++) {
-                    q.push(p->children.at(i));
+                for(int i = 0;i<currentNode->children.size(); i++) {
+                    remainingNodes.push(currentNode->children.at(i));
                 }
                 size--;
             }
@@ -80,15 +80,15 @@ Tree::~Tree()
      if(root == NULL)
             return;
 
-        queue<Node*> q;
-        q.push(root);
-        while(!q.empty()) {
-            int size = q.size();
+        queue<Node*> remainingNodes;
+        remainingNodes.push(root);
+        while(!remaningNodes.empty()) {
+            int size = remainingNodes.size();
             while (size > 0) {
-                Node * p = q.front();
-                q.pop();
-                for(int i = 0;i<p->children.size(); i++) {
-                    q.push(p->children.at(i));
+                Node * currentNode = remainingNodes.front();
+                remainingNodes.pop();
+                for(int i = 0;i<currentNode->children.size(); i++) {
+                    remainingNodes.push(currentNode->children.at(i));
                 }
                 delete p;
                 size--;
