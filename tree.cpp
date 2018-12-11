@@ -47,7 +47,7 @@ void Tree::createTree()
 }
 
 /* search Function:
-   Iterates through the tree with an in-order traversal, stops when the 
+   Iterates through the tree with an level-order traversal, stops when the 
    correct node is found. Utilizes a remainingNodesueue to track which nodes still need
    to be printed.
  */

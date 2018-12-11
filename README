@@ -1,12 +1,12 @@
 Gavin Smith
 December 6, 2018
 
-In-Order Tree Traversal
+Level-Order Tree Traversal
 
 Coded in C++
 
 This program creates a given tree with a given structure and searches the 
-tree with an in-order traversal to find a given node titled "Find Me" and 
+tree with an level-order traversal to find a given node titled "Find Me" and 
 the terminates. 
 
 How to run: type in "make all" and then run the executable file with 
